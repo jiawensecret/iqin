@@ -2,8 +2,10 @@
 <head>
   {!! Html::style('css/bootstrap.min.css') !!}
   {!! Html::style('css/bootstrap-theme.min.css') !!}
+  {!! Html::style('css/wangEditor.min.css') !!}
   {!! Html::script('js/vendor/jquery-3.1.0.min.js') !!}
   {!! Html::script('js/vendor/bootstrap.min.js') !!}
+  {!! Html::script('js/vendor/wangEditor.min.js') !!}
   <title>jw</title>
 </head>
 <body>

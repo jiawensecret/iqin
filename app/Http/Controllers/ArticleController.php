@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Repositories\ArticleRepository;
+use GrahamCampbell\Markdown\Facades\Markdown;
+
 
 class ArticleController extends Controller
 {
@@ -28,8 +30,7 @@ class ArticleController extends Controller
 
 
         if ($articles['article']['md'] == 1) {
-            $articles['article_content'] =($articles['article_content']);
-            var_dump($articles['article_content']);exit;
+            $articles['article_content']['content'] = Markdown::convertToHtml($articles['article_content']['content']);
         } else {
 
         }
