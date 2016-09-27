@@ -31,8 +31,11 @@ Route::get('/article-list','ArticleListController@index');
 Route::get('/article/{id}','ArticleController@index');
 Route::get('/search','SearchController@index');
 Route::get('/create','CreateController@index');
+Route::get('/create/write','CreateController@write');
 
 
 //登录注册
 Route::get('/register','UserController@register');
 Route::post('/register','UserController@postRegister');
+
+Route::get('/home', 'HomeController@index');

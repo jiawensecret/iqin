@@ -14,7 +14,8 @@ class CreateArticleContentsTable extends Migration
     {
         Schema::create('article_contents', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('article_id');
+            $table->tinyInteger('article_id')->default(0);
+            $table->tinyInteger('notice_id')->default(0);
             $table->longText('content');
             $table->timestamps();
         });

@@ -14,12 +14,12 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->index();
             $table->tinyInteger('public');// 0为私密 1为公开
             $table->char('title',255);
             $table->char('introduction',255);
-            $table->tinyInteger('md');
-            $table->integer('category');
+            $table->tinyInteger('md')->default(0);
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

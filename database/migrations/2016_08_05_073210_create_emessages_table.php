@@ -14,7 +14,15 @@ class CreateEmessagesTable extends Migration
     {
         Schema::create('emessages', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('send_user')->default(0);
+            $table->integer('recipient');
+            $table->string('title');
+            $table->string('content');
+            $table->integer('is_reply');
+            $table->integer('reply_id');
+            $table->tinyInteger('status')->default(0);
+            $table->integer('send_time');
+            $table->integer('recipient_time');
         });
     }
 

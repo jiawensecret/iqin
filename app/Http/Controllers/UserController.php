@@ -11,22 +11,22 @@ class UserController extends Controller
 {
     //
     public function register() {
-
-
-
-        return view('register');
+        return view('auth.register');
     }
 
     public function postRegister(Request $request) {
         $user = new User();
         $req = $request->all();
 
-        /*$filter = $user->fillable;
-        $req = $this->checkParams($req,$filter);*/
+        if($req['password'] !== $req['password_confirmation']) {
+            return redirect();
+        }
+        $filter = $user->fillable;
+        $req = $this->checkParams($req,$filter);
+        var_dump($req);exit;
 
         $user->insert($req);
 
-
-
+        return redirect('/');
     }
 }

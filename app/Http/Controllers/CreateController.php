@@ -10,11 +10,13 @@ class CreateController extends Controller
 {
     //
     public function index() {
-        $title ='创作';
-        return view('create.index',compact('title'));
+
+
+
     }
 
-    public function create() {
-
+    public function write() {
+        $title ='创作';
+        return view('create.index',compact('title'));
     }
 }
