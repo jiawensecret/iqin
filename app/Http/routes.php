@@ -38,4 +38,6 @@ Route::get('/create/write','CreateController@write');
 Route::get('/register','UserController@register');
 Route::post('/register','UserController@postRegister');
 
-Route::get('/home', 'HomeController@index');
+Route::get('/login', 'LoginController@login');
+Route::post('/login', 'LoginController@postLogin');
+Route::get('/logout', 'LoginController@logout');
