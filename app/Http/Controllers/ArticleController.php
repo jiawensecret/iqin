@@ -18,6 +18,7 @@ class ArticleController extends Controller
 
     public function __construct(ArticleRepository $articleRepository)
     {
+        parent::__construct();
         $this->articleRepository = $articleRepository;
     }
 
@@ -34,6 +35,6 @@ class ArticleController extends Controller
         } else {
 
         }
-        return view('article.article',$articles);
+        return $this->render('article.article',$articles);
     }
 }

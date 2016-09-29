@@ -66,7 +66,7 @@ class ArticleListRepository extends BaseRepository
 
     private function orderByDefault()
     {
-        $this->model = $this->model->orderBy('hot', 'DESC')->orderBy('create_at','DESC');
+        $this->model = $this->model->orderBy('hot', 'DESC')->orderBy('created_at','DESC');
 
     }
 

@@ -32,6 +32,7 @@ Route::get('/article/{id}','ArticleController@index');
 Route::get('/search','SearchController@index');
 Route::get('/create','CreateController@index');
 Route::get('/create/write','CreateController@write');
+Route::get('/emessage/{id}','EmessageController@index')->where('id','[0-9]+');
 
 
 //登录注册

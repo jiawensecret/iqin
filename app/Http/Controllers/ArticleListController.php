@@ -14,6 +14,7 @@ class ArticleListController extends Controller
 
     public function __construct(Repositories\ArticleListRepository $articleList)
     {
+        parent::__construct();
         $this->articleListRepository = $articleList;
     }
 
@@ -23,6 +24,6 @@ class ArticleListController extends Controller
         $links = $articles->render();
         $title = 'articleList';
 //        dd($articles);
-        return view('article.list', compact('articles', 'links', 'title'));
+        return $this->render('article.list', compact('articles', 'links', 'title'));
     }
 }

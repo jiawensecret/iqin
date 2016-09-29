@@ -17,6 +17,6 @@ class CreateController extends Controller
 
     public function write() {
         $title ='创作';
-        return view('create.index',compact('title'));
+        return $this->render('create.index',compact('title'));
     }
 }

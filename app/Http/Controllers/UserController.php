@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     //
     public function register() {
-        return view('auth.register');
+        return $this->render('auth.register');
     }
 
     public function postRegister(Request $request) {

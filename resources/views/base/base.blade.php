@@ -10,9 +10,18 @@
 </head>
 <body>
 <header class="container header">
-  <div class="col-md-3 brand">iqin</div>
-  <div class="col-md-3 brand">todo 登录注册</div>
+  <div class="col-md-8 brand">iqin</div>
+  @if(!$this_user)
+  <div class="col-md-2 brand ">
+    <a class="btn btn-sm btn-primary" href="{{url('login')}}">登录</a>
+  </div>
 
+  <div class="col-md-2 brand pull-right">
+    <a class="btn btn-sm btn-success" href="{{url('register')}}">注册</a>
+  </div>
+  @else
+    @include('base.user_nav',['user'=>$this_user])
+  @endif
 </header>
 <div class="navbar navbar-primary">
   <div class="container">
@@ -24,7 +33,7 @@
       <li><a href="">个人</a></li>
       <li><a href="">工具</a></li>
       <li><a href="">资源</a></li>
-      <li><a href="">笔记共享</a></li>
+      <li><a href="{{url('/notice')}}">笔记共享</a></li>
       <li><a href="{{url('/create')}}">创作</a></li>
       <li><a href="">关于</a></li>
     </ul>

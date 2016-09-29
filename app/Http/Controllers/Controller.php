@@ -7,18 +7,34 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+use Illuminate\Support\Facades\Auth;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-    protected function checkParams($data,$filter) {
-        array_walk($data,function(&$item){
+    protected $user;
+
+    public function __construct()
+    {
+        $this->user = Auth::user();
+    }
+
+
+    protected function checkParams($data, $filter)
+    {
+        array_walk($data, function (&$item) {
             $item = trim($item);
         });
-        $data = array_intersect_key($data,array_flip($filter));
+        $data = array_intersect_key($data, array_flip($filter));
         return $data;
 
+    }
+
+    protected function render($view, $data = [])
+    {
+        $data['this_user'] = $this->user;
+        return view($view, $data);
     }
 
 }

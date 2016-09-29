@@ -12,6 +12,6 @@ class IndexController extends Controller
     function index ()
     {
         $title = '首页';
-        return view('index',compact('title'));
+        return $this->render('index',compact('title'));
     }
 }
