@@ -14,8 +14,6 @@ class ArticleController extends Controller
     //
     protected $articleRepository;
 
-    protected $parser;
-
     public function __construct(ArticleRepository $articleRepository)
     {
         parent::__construct();

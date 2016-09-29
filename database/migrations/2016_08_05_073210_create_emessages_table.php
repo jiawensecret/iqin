@@ -17,7 +17,7 @@ class CreateEmessagesTable extends Migration
             $table->integer('send_user')->default(0);
             $table->integer('recipient');
             $table->string('title');
-            $table->string('content');
+            $table->json('content');
             $table->integer('is_reply');
             $table->integer('reply_id');
             $table->tinyInteger('status')->default(0);

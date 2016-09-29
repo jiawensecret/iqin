@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class EMessage extends Model
 {
     //
+    protected $table = 'emessages';
 }
