@@ -3,6 +3,7 @@
   {!! Html::style('css/bootstrap.min.css') !!}
   {!! Html::style('css/bootstrap-theme.min.css') !!}
   {!! Html::style('css/wangEditor.min.css') !!}
+  {!! Html::style('css/iqin.css') !!}
   {!! Html::script('js/vendor/jquery-3.1.0.min.js') !!}
   {!! Html::script('js/vendor/bootstrap.min.js') !!}
   {!! Html::script('js/vendor/wangEditor.min.js') !!}
@@ -37,7 +38,7 @@
       <li><a href="{{url('/create')}}">创作</a></li>
       <li><a href="">关于</a></li>
     </ul>
-    <form action="/search" class="navbar-form navbar-right input-group" method="get">
+    <form action="{{url('search')}}" class="navbar-form navbar-right input-group" method="get">
       <div class="input-group">
         <span class="input-group-addon">搜索</span>
         <input type="text" class="form-control">
@@ -54,7 +55,7 @@
 <div class="container">
   @yield('contain')
 </div>
-<footer class="container navbar-fixed-bottom">
+<footer class="container ">
   <div class="row">
     <ul class="list-inline">
       <li>con</li>

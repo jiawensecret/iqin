@@ -37,21 +37,20 @@ class EmessageController extends Controller
     }
 
 
-//todo
+
     public function view($id) {
-        $this->data['the_emessage'] = $the_message = Emessage::where('receive_user',$this->_user->id)->where('id',$id)->first()->toArray();
+        $send = request('send',false);
+        $the_message = $this->emessage->getMessage($this->user['id'],$id,$send);
         if(!$the_message) {
             abort(404);
         }
-        Emessage::where('receive_user',$this->_user->id)->where('id',$id)->update(['status'=>1]);
-        if($the_message['type'] == 0) {
-            $this->data['send_user'] = '系统消息';
-        } else {
-            $this->data['send_user'] = User::where('id',$the_message['send_user'])->first()->name;
+        if($the_message['status'] == 0 && !$send) {
+            $this->emessage->readMessage($this->user['id'],$id);
         }
 
-        $this->data['title'] = '查看信件';
-        return $this->_view('root.emessages.view');
+        $friend_list = $this->relation->getFriends($this->user['id']);
+
+        return $this->render('user.emessages_info',compact('the_message','friend_list'));
     }
 
     //发送页面

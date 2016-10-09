@@ -1,0 +1,20 @@
+body {
+    background-color: #ededed;
+}
+.container {
+    background-color: ivory;
+}
+
+header {
+    height: 100px;
+}
+
+article {
+    display: block;
+    height: 180px;
+}
+
+.article-list {
+    min-height: 700px;
+    padding: 20px;
+}

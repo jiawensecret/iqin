@@ -50,10 +50,14 @@ class EmessageRepository extends BaseRepository
      */
     public function getMessage($user_id,$id,$send = false) {
         if ($send) {
-            return $this->model->where('send_user',$user_id)->where('id',$id)->get()->toArray();
+            return $this->model->where('send_user',$user_id)->where('id',$id)->first()->toArray();
         }
 
-        return $this->model->where('recipient',$user_id)->where('id',$id)->get()->toArray();
+        return $this->model->where('recipient',$user_id)->where('id',$id)->first()->toArray();
 
+    }
+
+    public function readMessage($user_id ,$id) {
+        return $this->model->where('recipient',$user_id)->where('id',$id)->update(['status'=>1]);
     }
 }
