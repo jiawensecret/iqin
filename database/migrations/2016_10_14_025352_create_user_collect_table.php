@@ -12,7 +12,7 @@ class CreateUserCollectTable extends Migration
      */
     public function up()
     {
-        Schema::table('user_collect', function (Blueprint $table) {//收藏表 like表
+        Schema::create('user_collect', function (Blueprint $table) {//收藏表 like表
             //
             $table->increments('id');
             $table->integer('user_id')->default(0)->index();//发布者
@@ -30,8 +30,6 @@ class CreateUserCollectTable extends Migration
      */
     public function down()
     {
-        Schema::table('user_collect', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('user_collect');
     }
 }

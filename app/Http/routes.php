@@ -36,7 +36,8 @@ Route::get('/emessage','EmessageController@index');
 
 
 //member个人中心
-Route::get('/member/article-list'.'MemberController@articleList');//首页【个人】链接
+Route::get('/member/article-list','MemberController@articleList');//首页【个人】链接
+Route::get('/member/article-list/{id}','MemberController@CategoryArticle');//
 
 
 //登录注册

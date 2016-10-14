@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 abstract class BaseRepository{
 
+    const PAGE_SIZE = 3;
     protected $model;
 
     public function getById($id) {

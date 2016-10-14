@@ -12,7 +12,7 @@ class CreateNoteContentTable extends Migration
      */
     public function up()
     {
-        Schema::table('note_content', function (Blueprint $table) {
+        Schema::create('note_content', function (Blueprint $table) {
             //
             $table->increments('id');
             $table->Integer('notice_id')->default(0);
@@ -28,8 +28,6 @@ class CreateNoteContentTable extends Migration
      */
     public function down()
     {
-        Schema::table('note_content', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('note_content');
     }
 }

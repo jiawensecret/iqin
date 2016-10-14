@@ -13,7 +13,7 @@ use App\Model;
 class ArticleListRepository extends BaseRepository
 {
 
-    const PAGE_SIZE = 3;
+
     private $_orderBy = [];
 
     public function __construct(Article $article)
@@ -32,7 +32,7 @@ class ArticleListRepository extends BaseRepository
      * @param int $type 模式 默认0为分页展示 1为获取数据 返回数据数组
      */
 
-    public function getArticleList($params = [], $orderBy = [], $pageSize = self::PAGE_SIZE, $type = 0)
+    public function getArticleList($params = [], $orderBy = [], $pageSize = parent::PAGE_SIZE, $type = 0)
     {
         foreach ($params as $value) {
             if ($value == 'hot') {
