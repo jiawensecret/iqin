@@ -30,13 +30,13 @@
       <li><a href="/">首页</a></li>
       <li><a href="">站长</a></li>
       <li><a href="{{url('/article-list')}}">文章</a></li>
-      <li><a href="">热门</a></li>
-      <li><a href="">个人</a></li>
+      <li><a href="{{url('/hot')}}">热门</a></li>
+      <li><a href="{{url('/member/article-list')}}">个人</a></li>
       <li><a href="">工具</a></li>
       <li><a href="">资源</a></li>
       <li><a href="{{url('/notice')}}">笔记共享</a></li>
       <li><a href="{{url('/create')}}">创作</a></li>
-      <li><a href="">关于</a></li>
+      <li><a href="{{url('/about')}}">关于</a></li>
     </ul>
     <form action="{{url('search')}}" class="navbar-form navbar-right input-group" method="get">
       <div class="input-group">
@@ -52,7 +52,7 @@
     </form>
   </div>
 </div>
-<div class="container">
+<div class="container container-body">
   @yield('contain')
 </div>
 <footer class="container ">

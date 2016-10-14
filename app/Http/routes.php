@@ -35,6 +35,10 @@ Route::get('/create/write','CreateController@write');
 Route::get('/emessage','EmessageController@index');
 
 
+//member个人中心
+Route::get('/member/article-list'.'MemberController@articleList');//首页【个人】链接
+
+
 //登录注册
 Route::get('/register','UserController@register');
 Route::post('/register','UserController@postRegister');

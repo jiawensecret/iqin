@@ -15,6 +15,7 @@ class CreateNotesTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->index();
+            $table->integer('note_content_id')->index();
             $table->tinyInteger('public');// 0为私密 1为公开
             $table->char('title',255);
             $table->char('introduction',255);

@@ -15,6 +15,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('author_id')->default(0)->index();//发布者
+            $table->integer('note_id')->default(0)->index();//note的推送id
             $table->char('title',255);//标题
             $table->tinyInteger('reprint')->default(0);//是否是转载 1为转载
             $table->char('reprint_href',255)->default('');//转载链接

@@ -9,12 +9,44 @@ header {
     height: 100px;
 }
 
+.navbar-nav {
+    font-size: large;
+}
+
 article {
     display: block;
     height: 180px;
 }
 
 .article-list {
-    min-height: 700px;
+    min-height: 800px;
     padding: 20px;
+}
+
+.container-body {
+    background-color: ivory;
+    min-height: 900px;
+    font-family: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", Helvetica, Tahoma, "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
+    font-size: large;
+    line-height: 20px;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+.article {
+    padding: 20px;
+}
+
+p,h1,h2,h3,h4,h5 {
+    margin-bottom:30px;
+}
+
+.article li {
+    margin-bottom:30px;
+}
+
+.article p {
+    line-height: 32px;
 }
