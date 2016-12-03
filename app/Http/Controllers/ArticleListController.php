@@ -22,8 +22,8 @@ class ArticleListController extends Controller
     {
         $articles = $this->articleListRepository->getArticleList();
         $links = $articles->render();
-        $title = 'articleList';
+        $this->title = '文章列表';
 //        dd($articles);
-        return $this->render('article.list', compact('articles', 'links', 'title'));
+        return $this->render('article.list', compact('articles', 'links'));
     }
 }

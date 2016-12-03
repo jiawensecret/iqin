@@ -14,10 +14,12 @@ class Controller extends BaseController
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
     protected $user;
+    protected $title;
 
     public function __construct()
     {
         $this->user = Auth::user();
+        $this->title = 'jw';
     }
 
 
@@ -34,6 +36,7 @@ class Controller extends BaseController
     protected function render($view, $data = [])
     {
         $data['this_user'] = $this->user;
+        $data['title'] = $this->title;
         return view($view, $data);
     }
 
